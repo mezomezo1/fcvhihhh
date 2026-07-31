@@ -1,16 +1,12 @@
 import base64
 import zlib
 
-_ENCRYPTED_KEY = b"eJzztDRVqFYIys9NSlVwzi8qSS0CAA+sA2k="
-
-
-def _get_ke():
-  return zlib.decompress(base64.b64decode(_ENCRYPTED_KEY))
+_KE = b"vvnnvvnn@@"
 
 
 def rc4_decrypt(data: bytes, key: bytes = None) -> bytes:
   if key is None:
-    key = _get_ke()
+    key = _KE
 
   S = list(range(256))
   j = 0
@@ -34,10 +30,6 @@ def rc4_decrypt(data: bytes, key: bytes = None) -> bytes:
 
 def zlib_decompress(data: bytes) -> bytes:
   return zlib.decompress(data)
-
-
-def base64_decode(data: str) -> bytes:
-  return base64.b64decode(data)
 
 
 def base64_decode(data: str) -> bytes:
