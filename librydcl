@@ -1,7 +1,7 @@
 import base64
 import zlib
 
-_ENCRYPTED_KEY = b"eJzT08nMyVcozs8rSQUAJv0EPA=="
+_ENCRYPTED_KEY = b"eJzT8vPz9AIAAZ0CCQ=="
 
 
 def _get_ke():
